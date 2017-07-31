@@ -1,0 +1,17 @@
+.div {
+  background-image: url("http://blog.eventzilla.net/wp-content/uploads/2017/05/abstract-review-1.jpeg");
+  border: 5px solid #999;
+}
+p {
+    color: whitesmoke;
+    text-shadow: 0 0 2px #233; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #220;
+    -webkit-text-shadow: 0 0 2px #220;
+}
+
+h1 {
+    color: whitesmoke;
+    text-shadow: 0 0 2px #233; /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2px #220;
+    -webkit-text-shadow: 0 0 2px #220;
+}

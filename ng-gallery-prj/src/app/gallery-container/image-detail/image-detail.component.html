@@ -1,0 +1,16 @@
+<router-outlet></router-outlet>
+<a routerLink="/gallery">clsoe(X)</a>
+<div 
+   class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ image.name }}</h4>
+    <p class="list-group-item-text">{{ image.description }}</p>
+    <p class="list-group-item-text">{{ image.category }}</p>
+  </div >
+  <img 
+    [src]="image.imagePath" 
+    alt="{{ image.name }}" 
+    class="img-responsive center-block pull-right"
+    style="max-height: 550px;">
+</div>
+

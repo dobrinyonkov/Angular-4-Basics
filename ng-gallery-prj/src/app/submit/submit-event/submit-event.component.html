@@ -1,0 +1,75 @@
+<form [formGroup]="submitEventForm" (ngSubmit)="onSubmit()">
+  <div class="row pull-right">
+    <button type="submit" [disabled]="!submitEventForm.valid" class="btn btn-success"><span class="glyphicon glyphicon-ok"> submit</span></button>
+    <button routerLink="/submit" type="button" class="btn btn-danger"> X cancel</button>  
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitEventForm.get('name').valid && submitEventForm.get('name').touched, 
+        'has-success': submitEventForm.get('name').valid && submitEventForm.get('name').touched}">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitEventForm.get('description').valid && submitEventForm.get('description').touched, 
+        'has-success': submitEventForm.get('description').valid && submitEventForm.get('description').touched}">
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitEventForm.get('startDate').valid && submitEventForm.get('startDate').touched, 
+        'has-success': submitEventForm.get('startDate').valid && submitEventForm.get('startDate').touched}">
+        <label for="startDate">Start Date</label>
+        <input 
+          type="text" 
+          id="startDate" 
+          formControlName="startDate" 
+          class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitEventForm.get('endDate').valid && submitEventForm.get('endDate').touched, 
+        'has-success': submitEventForm.get('endDate').valid && submitEventForm.get('endDate').touched}">
+        <label for="endDate">End Date</label>
+        <input 
+          type="text" 
+          id="endDate" 
+          formControlName="endDate" 
+          class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitEventForm.get('location').valid && submitEventForm.get('location').touched, 
+        'has-success': submitEventForm.get('location').valid && submitEventForm.get('location').touched}">
+        <label for="location">Location</label>
+        <input 
+          type="text" 
+          id="location" 
+          formControlName="location" 
+          class="form-control">
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</form>

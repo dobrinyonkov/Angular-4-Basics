@@ -1,0 +1,60 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="/gallery">Gallery</a></li>
+        <li routerLinkActive="active"><a routerLink="/events">Events</a></li>
+        <li><a>About Me</a></li>
+        <div class="btn-group">
+        <button type="button" routerLink="/submit" class="btn btn-success navbar-btn">Submit</button>
+        <button 
+          type="button" appDropdown
+          class="navbar-btn btn btn-success dropdown-toggle dropdown-toggle-split dropdown" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-picture" style="color: #8000AB;"></span>  image</a></li>
+            <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-cog"></span> event</a></li>
+        </ul>
+        </div>
+      </ul>
+      <div class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+        <button class="btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="btn-group" appDropdown>
+        <button class="btn btn-danger navbar-btn btn-sm">UserName</button>
+        <button 
+          type="button" 
+          class="navbar-btn btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split dropdown" 
+          data-toggle="dropdown" 
+          aria-haspopup="true" 
+          aria-expanded="false">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+            <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+            <li><a style="cursor: pointer;"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+        </ul>
+      </div>
+        <li><a routerLink="/signup"><span class="glyphicon glyphicon-plus"></span> Register</a></li>
+        <li><a routerLink="/signin"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
+        <li class="dropdown" appDropdown>
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;" (click)="onSaveData()">Save Data</a></li>
+            <li><a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

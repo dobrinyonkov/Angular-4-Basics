@@ -1,0 +1,6 @@
+<div class="col-xs-12">
+  <app-event-item
+    *ngFor="let eventEl of events; let i = index"
+    [event]="eventEl"
+    [index]="i"></app-event-item>
+</div>

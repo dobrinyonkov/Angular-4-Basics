@@ -1,0 +1,66 @@
+  <form [formGroup]="submitImageForm" (ngSubmit)="onSubmit()">
+  <div class="row pull-right">
+    <button type="submit" [disabled]="!submitImageForm.valid" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>  submit</button>
+    <button routerLink="/submit" type="button" class="btn btn-danger"> X close</button>  
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitImageForm.get('name').valid && submitImageForm.get('name').touched, 
+        'has-success': submitImageForm.get('name').valid && submitImageForm.get('name').touched}">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          formControlName="name" 
+          class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitImageForm.get('description').valid && submitImageForm.get('description').touched, 
+        'has-success': submitImageForm.get('description').valid && submitImageForm.get('description').touched}">
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitImageForm.get('description').valid && submitImageForm.get('description').touched, 
+        'has-success': submitImageForm.get('description').valid && submitImageForm.get('description').touched}">
+        <label for="category">Category</label>
+        <input type="text" id="category" formControlName="category" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div 
+        class="form-group"
+        [ngClass]="{ 'has-error': !submitImageForm.get('imagePath').valid && submitImageForm.get('imagePath').touched, 
+        'has-success': submitImageForm.get('imagePath').valid && submitImageForm.get('imagePath').touched}">
+        <label for="imagePath">Image URL</label>
+        <input 
+          type="text" 
+          id="imagePath" 
+          formControlName="imagePath" 
+          class="form-control" 
+          #imagePath>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <img [src]="imagePath.value" class="img-responsive">
+    </div>
+  </div>
+  <br>
+  <br>
+</form>

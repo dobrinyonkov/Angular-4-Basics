@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel primary</h3>
+  </div>
+  <div class="panel-body">
+    <a *ngFor="let imageEl of images; let i = index">
+    <a
+      style="cursor: pointer;" 
+      routerLink="/gallery/{{ i }}" 
+      class="card list-group-item clearfix">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>{{ imageEl.name }}</h4>
+          <img [src]="imageEl.imagePath" class="img-responsive">
+          <p class="list-group-item-text">{{ selectedCategory }}</p>
+          <p>{{ imageEl.description }} <button class="pull-right btn btn-primary btn-sm">view details</button></p> 
+        </div>
+      </div></a>
+    </a>
+  </div>
+</div>
+

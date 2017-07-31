@@ -1,0 +1,19 @@
+<div class="container">
+  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel danger</h3>
+        </div>
+        <div class="panel-body">
+          <app-image-categories *ngFor="let categoryEl of imageCategories; let i = index" [category]="categoryEl">
+          </app-image-categories>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <app-image-item></app-image-item>
+    </div>
+  </div>
+</div>

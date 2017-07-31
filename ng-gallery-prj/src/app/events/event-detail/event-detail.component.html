@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="jumbotron-heading">{{ event.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="lead text-muted">{{ event.description }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="lead text-muted">{{ event.startDate }}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="lead text-muted">{{ event.endDate }}<p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p class="lead text-muted">{{ event.location }}<p>
+      
+  </div>
+</div>
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
