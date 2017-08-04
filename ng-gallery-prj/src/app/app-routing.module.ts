@@ -1,3 +1,4 @@
+import { ProfileComponent } from './profile/profile.component';
 import { SubmitEventComponent } from './submit/submit-event/submit-event.component';
 import { SubmitImageComponent } from './submit/submit-image/submit-image.component';
 import { SubmitComponent } from './submit/submit.component';
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
         ]
     },
     { path: 'submit', component: SubmitComponent },
+    { path: 'profile', component: ProfileComponent},
     { path: 'submit/image', component: SubmitImageComponent },
     { path: 'submit/event', component: SubmitEventComponent }
 ];

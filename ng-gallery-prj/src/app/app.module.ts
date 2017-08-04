@@ -25,6 +25,8 @@ import { SubmitComponent } from './submit/submit.component';
 import { SubmitImageComponent } from './submit/submit-image/submit-image.component';
 import { SubmitEventComponent } from './submit/submit-event/submit-event.component';
 import { ImageItemComponent } from './gallery-container/image-item/image-item.component';
+import { ProfileNavComponent } from './profile/profile-nav/profile-nav.component';
+import { ProfileContainerComponent } from './profile/profile-container/profile-container.component';
 
 
 
@@ -47,6 +49,8 @@ import { ImageItemComponent } from './gallery-container/image-item/image-item.co
     SubmitImageComponent,
     SubmitEventComponent,
     ImageItemComponent,
+    ProfileNavComponent,
+    ProfileContainerComponent,
   ],
   imports: [
     BrowserModule,
