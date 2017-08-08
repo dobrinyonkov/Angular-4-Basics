@@ -10,11 +10,16 @@ import { GalleryContainerComponent } from './gallery-container/gallery-container
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileTabComponent } from './profile/profile-container/profile-tab/profile-tab.component';
+import { ProfileGalleryComponent } from "./profile/profile-container/profile-gallery/profile-gallery.component";
+import { ProfileFavouritesComponent } from "./profile/profile-container/profile-favourites/profile-favourites.component";
+import { ProfileJournalComponent } from "./profile/profile-container/profile-journal/profile-journal.component";
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'gallery', component: GalleryContainerComponent, children: [
+    {
+        path: 'gallery', component: GalleryContainerComponent, children: [
             {
                 path: ':id', component: ImageDetailComponent
             }
@@ -28,7 +33,14 @@ const appRoutes: Routes = [
         ]
     },
     { path: 'submit', component: SubmitComponent },
-    { path: 'profile', component: ProfileComponent},
+    { path: 'profile', component: ProfileComponent, children: [
+            { path: 'profile', component: ProfileTabComponent },
+            { path: 'gallery', component: ProfileGalleryComponent },
+            { path: 'favourites', component: ProfileFavouritesComponent },
+            { path: 'journal', component: ProfileJournalComponent },
+        ]
+    },
+
     { path: 'submit/image', component: SubmitImageComponent },
     { path: 'submit/event', component: SubmitEventComponent }
 ];

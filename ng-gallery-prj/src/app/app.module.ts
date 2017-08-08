@@ -25,8 +25,14 @@ import { SubmitComponent } from './submit/submit.component';
 import { SubmitImageComponent } from './submit/submit-image/submit-image.component';
 import { SubmitEventComponent } from './submit/submit-event/submit-event.component';
 import { ImageItemComponent } from './gallery-container/image-item/image-item.component';
-import { ProfileNavComponent } from './profile/profile-nav/profile-nav.component';
 import { ProfileContainerComponent } from './profile/profile-container/profile-container.component';
+import { ProfileDisplayComponent } from './profile/profile-container/profile-display/profile-display.component';
+import { ProfileTabComponent } from './profile/profile-container/profile-tab/profile-tab.component';
+import { ProfileGalleryComponent } from './profile/profile-container/profile-gallery/profile-gallery.component';
+import { ProfileFavouritesComponent } from './profile/profile-container/profile-favourites/profile-favourites.component';
+import { ProfileJournalComponent } from './profile/profile-container/profile-journal/profile-journal.component';
+import { ProfileNavComponent } from "./profile/profile-container/profile-nav/profile-nav.component";
+import { ProfileService } from "./profile/profile.service";
 
 
 
@@ -51,6 +57,11 @@ import { ProfileContainerComponent } from './profile/profile-container/profile-c
     ImageItemComponent,
     ProfileNavComponent,
     ProfileContainerComponent,
+    ProfileDisplayComponent,
+    ProfileTabComponent,
+    ProfileGalleryComponent,
+    ProfileFavouritesComponent,
+    ProfileJournalComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +71,7 @@ import { ProfileContainerComponent } from './profile/profile-container/profile-c
     }),
     ReactiveFormsModule
   ],
-  providers: [ImageService, EventService],
+  providers: [ImageService, EventService, ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
