@@ -4,9 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import { MaterialModule } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -37,7 +41,10 @@ const appRoutes: Routes = [
     AngularFontAwesomeModule,
     MaterialModule,
     FlexLayoutModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
