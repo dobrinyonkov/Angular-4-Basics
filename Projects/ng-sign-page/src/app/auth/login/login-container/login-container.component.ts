@@ -4,6 +4,7 @@ import {MdSnackBar} from '@angular/material';
 
 import { Subscription } from "rxjs/Subscription";
 import { AuthService } from "../../auth.service";
+import { AuthUser } from "../../auth-user.model";
 
 @Component({
   selector: 'app-login-container',
@@ -22,13 +23,13 @@ export class LoginContainerComponent implements OnInit, OnDestroy {
     this.auth.logout();
   }
 
-  login(user) {
+  login(user : AuthUser) {
     this.tryingToLogIn = true;
     if (this.request) {
       this.request.unsubscribe();
     }
     this.request = this.auth
-      .login(user.username, user.password)
+      .login(user.email, user.password)
       .delay(1000)
       .subscribe(
         //Is the data

@@ -47,6 +47,11 @@ export class ImageService {
         )
     ];
 
+    setImages(images: Image[]) {
+        this.images = images;
+        this.imagesChanged.next(this.images.slice());
+    }
+
     getImages() {
         return this.images.slice();
     }

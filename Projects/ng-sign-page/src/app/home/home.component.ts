@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { User } from "../users/user.model";
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   toolbarTitle = 'CP2';
+  users: FirebaseListObservable<User[]>;;
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
+    this.users = this.db.list('users');
   }
 
 }

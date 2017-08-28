@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -34,6 +35,7 @@ import { ProfileJournalComponent } from './profile/profile-container/profile-jou
 import { ProfileNavComponent } from "./profile/profile-container/profile-nav/profile-nav.component";
 import { ProfileService } from "./profile/profile.service";
 import { ProfileEditComponent } from './profile/profile-container/profile-tab/profile-edit/profile-edit.component';
+import { DataStorageService } from "./shared/data-storage.service";
 
 
 
@@ -71,9 +73,10 @@ import { ProfileEditComponent } from './profile/profile-container/profile-tab/pr
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyArgZ2Mj6eeHPpZrVbzgXnCAMFbSmNhLv4'
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [ImageService, EventService, ProfileService],
+  providers: [ImageService, EventService, ProfileService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
